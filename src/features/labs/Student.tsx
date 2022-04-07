@@ -1,5 +1,5 @@
+import { Student } from '@/models'
 import * as React from 'react'
-import { Student } from '../../models'
 
 export interface StudentCardProps {
   student: Student
