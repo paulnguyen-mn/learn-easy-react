@@ -5,11 +5,22 @@ export interface StudentCardProps {
   student: Student
 }
 
+// Props are READ ONLY
+// DO NOT MUTATE Props
+// Props are immutable
 export function StudentCard({ student }: StudentCardProps) {
-  const { name, isHero } = student
+  let { name, isHero } = student
+
+  // name = 'Bob'
+  function handleClick() {
+    student.name = 'Bob'
+    console.log(student)
+    // - not trigger re-render
+    // - inconsistent data
+  }
 
   return (
-    <div>
+    <div onClick={handleClick}>
       Student: {name} {isHero ? 'hero' : 'no-hero'}
     </div>
   )
