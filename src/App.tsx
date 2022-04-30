@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Footer, Header } from './components/common'
+import { MainLayout } from './components/Layout'
 import { MyText } from './features/labs/MyText'
 import { StudentCard } from './features/labs/Student'
 import { Student } from './models/student'
@@ -21,9 +22,9 @@ function App() {
 
   return (
     <div>
-      <Header></Header>
-      <StudentCard student={john} onClick={handleStudentClick} />
-      <Footer></Footer>
+      <MainLayout>
+        <StudentCard student={john} onClick={handleStudentClick} />
+      </MainLayout>
 
       <MyText></MyText>
 
